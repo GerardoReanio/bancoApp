@@ -51,15 +51,9 @@ namespace BancoApp.Controllers
             string roles = TempData["role"].ToString();
             string[] rolesList = Regex.Split(roles, ",");
             ViewBag.roles = rolesList;
-            ViewData["role"] = rolesList;
-            ViewData["username"] = userName;
+
             return View();
         }
-
-        
-
-
-
 
     }
 }

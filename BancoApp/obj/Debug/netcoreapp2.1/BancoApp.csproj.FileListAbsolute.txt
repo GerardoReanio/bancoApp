@@ -33,3 +33,7 @@ C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\BancoApp.csproj.Copy
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\UserLogin\Index.g.cshtml.cs
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\UserLogin\welcome.g.cshtml.cs
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Index.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Create.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Edit.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Delete.g.cshtml.cs
