@@ -37,20 +37,34 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Banco", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div>
 
 <hr />
-<table>
+<h1>Sucursales</h1>
 
-    <tbody>
-        @foreach (var sucursal in ViewBag.sucursales)
-        {
-            <tr><td>@sucursal.Nombre</td></tr>
-        }
-    </tbody>
+<table class="table table-responsive table-bordered table-striped">
+    <tr>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Fecha Registro</th>
+        <th>Operaciones</th>
+
+    </tr>
+    @foreach (var sucursal in ViewBag.sucursales)
+    {
+        <tr>
+            <td>@sucursal.Nombre</td>
+            <td>@sucursal.Direccion</td>
+            <td>@sucursal.FechaRegistro</td>
+            <td>
+                op
+              
+            </td>
+        </tr>
+    }
 </table>
 
 
-<a href="@Url.Action("Index", "Sucursal")">Crear Sucursales</a>
+
+<a href="@Url.Action("Create", "Sucursal")">Crear Sucursales</a>

@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{14B9C73B-A7D7-4705-BD79-B461702B4613}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/SucursalController.cs">
+    <Files>
+      <File FileName="Models/OrdenPagoController.cs" Line="1" Column="1" />
+      <File FileName="Models/BancoModel.cs" Line="1" Column="1" />
+      <File FileName="Controllers/BancoController.cs" Line="58" Column="71" />
+      <File FileName="Controllers/UserLoginController.cs" Line="53" Column="38" />
+      <File FileName="Views/UserLogin/Welcome.cshtml" Line="16" Column="36" />
+      <File FileName="Views/Banco/Details.cshtml" Line="51" Column="29" />
+      <File FileName="Views/Banco/Index.cshtml" Line="13" Column="10" />
+      <File FileName="Views/Sucursal/Create.cshtml" Line="3" Column="34" />
+      <File FileName="Views/Banco/Edit.cshtml" Line="15" Column="48" />
+      <File FileName="Models/SucursalModel.cs" Line="12" Column="30" />
+      <File FileName="Controllers/SucursalController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/GerardoReanio/Desktop/projects/projectcsharp/bancoapp/BancoApp/Program.cs" relfile="Program.cs" line="1" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.BancoApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
