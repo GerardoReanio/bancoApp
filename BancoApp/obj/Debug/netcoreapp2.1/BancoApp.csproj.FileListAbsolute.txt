@@ -37,3 +37,6 @@ C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\In
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Create.g.cshtml.cs
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Edit.g.cshtml.cs
 C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Delete.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Banco\Details.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Sucursal\Index.g.cshtml.cs
+C:\projectscsharp\BancoApp\BancoApp\obj\Debug\netcoreapp2.1\Razor\Views\Sucursal\Create.g.cshtml.cs

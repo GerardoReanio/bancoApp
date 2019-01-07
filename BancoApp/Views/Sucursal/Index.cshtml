@@ -1,0 +1,35 @@
+﻿@model System.Data.DataTable
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-responsive table-bordered table-striped">
+    <tr>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>Fecha Registro</th>
+        <th>Banco</th>
+        <th>Operaciones</th>
+
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][3]</td>
+            <td>@Model.Rows[i][4]</td>
+            <!--
+            <td>
+                <a href="@Url.Action("Details", "Banco", new {@id=@Model.Rows[i][0]})">Detalle</a>
+                <a href="@Url.Action("Edit", "Banco", new {@id=@Model.Rows[i][0]})">Editar</a>
+                <a href="@Url.Action("Delete", "Banco", new {@id=@Model.Rows[i][0]})">Eliminar</a>
+            </td>
+             -->
+
+        </tr>
+    }
+</table>
+
+<a href="@Url.Action("Create", "Sucursal")">Crear Nueva Sucursal</a>
+

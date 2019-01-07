@@ -25,14 +25,60 @@ namespace BancoApp.Controllers
             string sqlquery = "SELECT * FROM Banco";
             MySqlDataAdapter sda = new MySqlDataAdapter(sqlquery, conn);
             sda.Fill(dt);
-          
+
             return View(dt);
         }
+
+       
 
         // GET: Banco/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            BancoModel bancoModel = new BancoModel();
+            DataTable dt = new DataTable();
+
+            BancoAppContext context = HttpContext.RequestServices.GetService(typeof(BancoApp.Models.BancoAppContext)) as BancoAppContext;
+
+            MySqlConnection conn = context.GetConnection();
+            conn.Open();
+            string sqlquery = "SELECT * FROM Banco WHERE idBanco = @IdBanco";
+            MySqlDataAdapter sda = new MySqlDataAdapter(sqlquery, conn);
+            sda.SelectCommand.Parameters.AddWithValue("@IdBanco", id);
+            sda.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                bancoModel.IdBanco = Convert.ToInt32(dt.Rows[0][0].ToString());
+                bancoModel.Nombre = dt.Rows[0][1].ToString();
+                bancoModel.Direccion = dt.Rows[0][2].ToString();
+                bancoModel.FechaRegistro = (System.DateTime)dt.Rows[0][3];
+
+                // get list sucursales
+                DataTable dts = new DataTable();
+                string sqlquery_s = "SELECT * FROM Sucursal WHERE Banco_idBanco = @IdBanco";
+                MySqlCommand cmd = new MySqlCommand(sqlquery_s, conn);
+                cmd.Parameters.AddWithValue("@IdBanco", id);
+                MySqlDataReader sdr = cmd.ExecuteReader();
+
+                List<SucursalModel> list = new List<SucursalModel>();
+                while (sdr.Read())
+                {
+                    list.Add(new SucursalModel()
+                    {
+                        IdSucursal = Convert.ToInt32(sdr["IdSucursal"]),
+                        Nombre = sdr["Nombre"].ToString(),
+                        Direccion = sdr["Direccion"].ToString(),
+                        FechaRegistro = (System.DateTime) sdr["FechaRegistro"],
+                        IdBanco = Convert.ToInt32(sdr["Banco_idBanco"].ToString()),
+                    });
+                }
+                ViewBag.sucursales = list;
+
+                return View(bancoModel);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         // GET: Banco/Create
@@ -87,8 +133,6 @@ namespace BancoApp.Controllers
                 return RedirectToAction("Index");
             }
 
-
-            
         }
 
         // POST: Banco/Edit/5
