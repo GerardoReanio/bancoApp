@@ -12579,23 +12579,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/GerardoReanio/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\gof\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/GerardoReanio/Desktop/projects/projectcsharp/bancoapp/BancoApp/BancoApp.csproj",
+      "projectUniqueName": "c:\\Users\\gof\\GerardoReanio\\2019\\dotnet\\projects\\bancoapp\\BancoApp\\BancoApp.csproj",
       "projectName": "BancoApp",
-      "projectPath": "/Users/GerardoReanio/Desktop/projects/projectcsharp/bancoapp/BancoApp/BancoApp.csproj",
-      "packagesPath": "/Users/GerardoReanio/.nuget/packages/",
-      "outputPath": "/Users/GerardoReanio/Desktop/projects/projectcsharp/bancoapp/BancoApp/obj",
+      "projectPath": "c:\\Users\\gof\\GerardoReanio\\2019\\dotnet\\projects\\bancoapp\\BancoApp\\BancoApp.csproj",
+      "packagesPath": "C:\\Users\\gof\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\gof\\GerardoReanio\\2019\\dotnet\\projects\\bancoapp\\BancoApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/GerardoReanio/.config/NuGet/NuGet.Config"
+        "C:\\Users\\gof\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -12620,7 +12620,8 @@
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.1.1, )"
+            "version": "[2.1.1, )",
+            "autoReferenced": true
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",

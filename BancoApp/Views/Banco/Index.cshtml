@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>Bancos </h1>
 <table class="table table-responsive table-bordered table-striped" >
     <tr>
         <th>Nombre</th>
@@ -17,12 +18,12 @@
         <td>@Model.Rows[i][2]</td>
         <td>@Model.Rows[i][3]</td>
         <td>
-            <a href="@Url.Action("Details", "Banco", new {@id=@Model.Rows[i][0]})">Detalle</a>
-            <a href="@Url.Action("Edit", "Banco", new {@id=@Model.Rows[i][0]})">Editar</a>
-            <a href="@Url.Action("Delete", "Banco", new {@id=@Model.Rows[i][0]})">Eliminar</a>
+            <a class="btn btn-default btn-xs" href="@Url.Action("Details", "Banco", new {@id=@Model.Rows[i][0]})">Detalle</a>
+            <a class="btn btn-default btn-xs" href="@Url.Action("Edit", "Banco", new {@id=@Model.Rows[i][0]})">Editar</a>
+            <a class="btn btn-default btn-xs" href="@Url.Action("Delete", "Banco", new {@id=@Model.Rows[i][0]})">Eliminar</a>
         </td>
     </tr>
     }
 </table>
 
-<a href="@Url.Action("Create", "Banco")">Crear Nuevo Banco</a>
+<a class="btn btn-primary btn-xs" href="@Url.Action("Create", "Banco")">Crear Nuevo Banco</a>

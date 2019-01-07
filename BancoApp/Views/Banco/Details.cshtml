@@ -4,10 +4,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles del Banco</h2>
 
 <div>
-    <h4>BancoModel</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -37,7 +37,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar</a>
 </div>
 
 <hr />
@@ -57,14 +57,14 @@
             <td>@sucursal.Nombre</td>
             <td>@sucursal.Direccion</td>
             <td>@sucursal.FechaRegistro</td>
-            <td>
-                op
-              
-            </td>
+           <td>
+                <a class="btn btn-default btn-xs" href="#">Editar</a>
+                <a class="btn btn-default btn-xs" href="#">Eliminar</a>
+        </td>
         </tr>
     }
 </table>
 
 
 
-<a href="@Url.Action("Create", "Sucursal")">Crear Sucursales</a>
+<a class="btn btn-primary btn-xs" href="@Url.Action("Create", "Sucursal", new {@id = @Model.IdBanco})">Crear nueva sucursal</a>

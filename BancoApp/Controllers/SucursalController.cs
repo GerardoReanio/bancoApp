@@ -36,7 +36,7 @@ namespace BancoApp.Controllers
         }
 
         // GET: Sucursal/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             return View(new SucursalModel());
         }
@@ -44,23 +44,23 @@ namespace BancoApp.Controllers
         // POST: Sucursal/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Models.SucursalModel sucursalModel)
+        public ActionResult Create(Models.SucursalModel sucursalModel, int id)
         {
             BancoAppContext context = HttpContext.RequestServices.GetService(typeof(BancoApp.Models.BancoAppContext)) as BancoAppContext;
 
             MySqlConnection conn = context.GetConnection();
 
             conn.Open();
-            string sqlquery = "INSERT Into Sucursal VALUES (@IdSucursal, @Nombre, @Direccion, @FechaRegistro, @Banco_idBanco)";
+            string sqlquery = "INSERT Into Sucursal (nombre, direccion, fechaRegistro, Banco_idBanco) VALUES ( @Nombre, @Direccion, @FechaRegistro, @Banco_idBanco)";
             MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
-            cmd.Parameters.AddWithValue("@IdSucursal", sucursalModel.IdSucursal);
+            //cmd.Parameters.AddWithValue("@IdSucursal", sucursalModel.IdSucursal);
             cmd.Parameters.AddWithValue("@Nombre", sucursalModel.Nombre);
             cmd.Parameters.AddWithValue("@Direccion", sucursalModel.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", sucursalModel.FechaRegistro);
-            cmd.Parameters.AddWithValue("@Banco_idBanco", sucursalModel.IdBanco);
+            cmd.Parameters.AddWithValue("@Banco_idBanco", id);
             cmd.ExecuteNonQuery();
             conn.Close();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Banco", new {@id = id});
 
         }
 

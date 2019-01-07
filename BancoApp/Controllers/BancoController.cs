@@ -97,9 +97,9 @@ namespace BancoApp.Controllers
             MySqlConnection conn = context.GetConnection();
 
             conn.Open();
-            string sqlquery = "INSERT Into Banco VALUES (@IdBanco, @Nombre, @Direccion, @FechaRegistro)";
+            string sqlquery = "INSERT Into Banco (nombre, direccion, fechaRegistro)VALUES (@Nombre, @Direccion, @FechaRegistro)";
             MySqlCommand cmd = new MySqlCommand(sqlquery, conn);
-            cmd.Parameters.AddWithValue("@IdBanco", bancoModel.IdBanco);
+            //cmd.Parameters.AddWithValue("@IdBanco", bancoModel.IdBanco);
             cmd.Parameters.AddWithValue("@Nombre", bancoModel.Nombre);
             cmd.Parameters.AddWithValue("@Direccion", bancoModel.Direccion);
             cmd.Parameters.AddWithValue("@FechaRegistro", bancoModel.FechaRegistro);

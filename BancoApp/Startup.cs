@@ -76,7 +76,7 @@ namespace BancoApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Banco}/{action=Index}/{id?}");
             });
         }
     }
