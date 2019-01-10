@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using BancoApp.Models;
+using Microsoft.AspNetCore.Session;
 
 namespace BancoApp
 {
@@ -48,8 +49,8 @@ namespace BancoApp
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSession();
             //services.AddMvc();
             services.Add(new ServiceDescriptor(typeof(BancoAppContext), new BancoAppContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
@@ -71,7 +72,7 @@ namespace BancoApp
             app.UseStaticFiles();
             
             app.UseCookiePolicy();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

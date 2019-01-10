@@ -33,8 +33,11 @@ namespace BancoApp.Controllers
 
             MySqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read()) {
-                TempData["userName"] = lc.UserName.ToString();
-                TempData["role"] = sdr["role"].ToString(); 
+                //TempData["userName"] = lc.UserName.ToString();
+                //TempData["role"] = sdr["role"].ToString(); 
+                HttpContext.Session.SetString("roles", sdr["role"].ToString());
+                HttpContext.Session.SetString("username", lc.UserName.ToString());
+                //Session["username"] = lc.UserName.ToString();
 
                 return RedirectToAction("Welcome");
             }else{
@@ -47,9 +50,11 @@ namespace BancoApp.Controllers
 
         public IActionResult Welcome()
         {
-            string userName = TempData["userName"].ToString();
-            string roles = TempData["role"].ToString();
-            string[] rolesList = Regex.Split(roles, ",");
+            //string userName = TempData["userName"].ToString();
+            //string roles = TempData["role"].ToString();
+            //string[] rolesList = Regex.Split(roles, ",");
+            string[] rolesList = Regex.Split(HttpContext.Session.GetString("roles"), ",");
+            ViewBag.username = HttpContext.Session.GetString("username");
             ViewBag.roles = rolesList;
 
             return View();

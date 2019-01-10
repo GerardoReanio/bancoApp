@@ -6,7 +6,24 @@
 
 <h1>Bienvenido</h1>
 <hr />
+@ViewBag.username
+<br>
 Tienes acceso a :
+@foreach (string role in ViewBag.roles)
+{
+        @if(role == "Banco"){
+           <h1> Link a Bancos</h1>
+        }         
+        @if(role == "Sucursal"){
+            <h1>Link a Sucursales</h1>
+        }
+        @if(role == "OrdenPago"){
+            <h1>Link a Ordenes de Pago</h1>
+        } 
+}
+
+
+
 
 <table>
 

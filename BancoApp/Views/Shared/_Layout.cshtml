@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    @using Microsoft.AspNetCore.Http;
+    string userLogged = HttpContext.Session.GetString("username");
+    
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -29,9 +34,15 @@
                 <a asp-area="" asp-controller="Banco" asp-action="Index" class="navbar-brand">BancoWebApp</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="UserLogin" asp-action="Index">Login</a></li>
-                </ul>
+                @if (userLogged == null){
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="UserLogin" asp-action="Index">Login</a></li>
+                    </ul>
+                }
+                else{
+                    @userLogged    
+                }
+                
             </div>
         </div>
     </nav>
